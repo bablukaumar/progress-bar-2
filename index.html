@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agent sale</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
+
+  <!-- Modal -->
+  <div class="modal fade bd-example-modal-lg" id="exampleModalCenter" tabindex="-1" role="dialog"
+    aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">Create Agent's Contract for switch-handle</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form id="agentForm" novalidate>
+            <!-- Progress bar -->
+            <div class="progress mb-3">
+              <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar"
+                style="width: 0%;" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+
+            <!-- Steps -->
+            <div class="container">
+              <div class="steps">
+                <div class="step step-1 active">
+                  <span class="circle">1</span>
+                  <h4>Agent Sale</h4>
+                </div>
+                <div class="step step-2">
+                  <span class="circle">2</span>
+                  <h4>Agent Details</h4>
+                </div>
+                <div class="step step-3">
+                  <span class="circle">3</span>
+                  <h4>Buyer/Seller Details</h4>
+                </div>
+                <div class="step step-4">
+                  <span class="circle">4</span>
+                  <h4>Title Company Details</h4>
+                </div>
+                <div class="step step-5">
+                  <span class="circle">5</span>
+                  <h4>Mortgage Company Details
+                  </h4>
+                </div>
+                <div class="step step-6">
+                  <span class="circle">6</span>
+                  <h4>Other Agent</h4>
+                </div>
+                <div class="step step-7">
+                  <span class="circle">7</span>
+                  <h4>Broker Details</h4>
+                </div>
+                <div class="step step-8">
+                  <span class="circle">8</span>
+                  <h4>Referring Details</h4>
+                </div>
+                <div class="step step-9">
+                  <span class="circle">9</span>
+                  <h4>Final Calculations</h4>
+                </div>
+              </div>
+            </div>
+
+
+            <div>
+
+
+
+
+
+              <!-- Rounded switch -->
+
+              <!-- Form steps content -->
+
+
+              <div class="step-content">
+
+                <div class="step-1">
+                  <!-- Switch button -->
+
+                  <div class="d-flex justify-content-between">
+                    <div class="title">
+                      <h5>Is this a test cust listing? <span class="text-danger">*</span></h5>
+                    </div>
+                    <div class="switch-item">
+                      <label class="switch">
+
+                        <input class="switch-input" type="checkbox" />
+                        <span class="switch-label" data-on="Yes" data-off="No"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div>
+                  </div>
+
+
+                  <div class="d-flex justify-content-between">
+                    <div class="title">
+                      <h5>You represent the <span class="text-danger">*</span></h5>
+                    </div>
+                    <div class="switch-item">
+                      <label class="switch">
+
+                        <input class="switch-input" type="checkbox" />
+                        <span class="switch-label" data-on="Seller" data-off="Buyer"></span>
+                        <span class="switch-handle"></span>
+                      </label>
+                    </div>
+                  </div>
+                  <h5 class="all-heading">If both and this an in-house transaction,</h5>
+                  <h5 class="all-heading">who is the intermediary?</h5>
+                  <!-- Add form inputs for Agent Sale -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-4">
+                          <label for="agentSale">Today's Date <span class="text-danger">*</span></label>
+                          <input type="date" class="form-control" id="agentSale" name="agentSale"
+                            placeholder="20/06/2024" required>
+                          <div class="invalid-feedback">Please enter the today's date.</div>
+                        </div>
+                        <div class="col-4">
+                          <label for="saleAmount">Closing Date <span class="text-danger">*</span></label>
+                          <input type="date" class="form-control" id="saleAmount" name="saleAmount"
+                            placeholder="20/06/2025" required>
+                          <div class="invalid-feedback">Please enter the closing date .</div>
+                        </div>
+                        <div class="col-4">
+                          <label for="saleAmount">MLS <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="saleAmount" name="saleAmount" placeholder=""
+                            required>
+                          <div class="invalid-feedback">Please enter the MLS.</div>
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-2" style="display: none;">
+                  <h5>Agent Details <span class="text-danger">*</span></h5>
+                  <!-- Add form inputs for Agent Details -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="agentName">Agent Name</label><br>
+                          <!-- <input type="text" class="form-control" id="agentName" name="agentName" placeholder="Enter Agent Name" required> -->
+                          <select class="form-control" id="agentName" name="agentName" required>
+                            <option value="">Select</option>
+                            <option value="Rachana Manvi">Rachana Manvi</option>
+                            <option value="Parduman Kumar">Parduman Kumar</option>
+                            <option value="Add Agent Name">Add More Agent Name</option>
+                          </select>
+                          <div class="invalid-feedback">Please select one.</div>
+
+                          <label for="agentLicense">Phone <span class="text-danger">*</span></label>
+                          <input type="number" class="form-control" id="agentLicense" name="agentLicense"
+                            placeholder="XXX XXX XXXX" required>
+                          <div class="invalid-feedback">Please enter the valid phone number.</div>
+                          <label for="agentLicense">Fax </label>
+                          <input type="text" class="form-control" id="agentLicense" name="agentLicense"
+                            placeholder="XXX XXX XXXX">
+                        </div>
+
+                        <div class="col-6">
+                          <label for="agentLicense">Street Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="agentLicense" name="agentLicense" placeholder=""
+                            required>
+                          <div class="invalid-feedback">Please enter the Street Name.</div>
+
+
+                          <label for="agentLicense">Zipcode <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="agentLicense" name="agentLicense" placeholder=""
+                            required>
+                          <div class="invalid-feedback">Please enter the Zipcode.</div>
+
+
+                          <label for="agentLicense">City <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="agentLicense" name="agentLicense" placeholder=""
+                            required>
+                          <div class="invalid-feedback">Please enter the city.</div>
+
+                        </div>
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="step-3" style="display: none;">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-6">
+                        <h5>Buyer Details</h5>
+                        <!-- Add form inputs for Buyer/Seller Details -->
+                        <div class="form-group">
+                          <label for="buyerName"> Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="buyerName" name="buyerName" placeholder=""
+                            required>
+                          <div class="invalid-feedback">Please enter the buyer name.</div>
+                        </div>
+                        <div class="form-group">
+                          <label for="sellerName">Phone <span class="text-danger">*</span></label>
+                          <input type="number" class="form-control" id="sellerName" name="sellerName"
+                            placeholder="XXX XXX XXXX" required>
+                          <div class="invalid-feedback">Please enter the Phone.</div>
+                        </div>
+
+                      </div>
+
+                      <div class="col-6">
+                        <h5>Seller Details</h5>
+
+                        <div class="form-group">
+                          <div class="form-group">
+                            <label for="buyerName"> Name <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" id="buyerName" name="buyerName" placeholder=""
+                              required>
+                            <div class="invalid-feedback">Please enter the buyer name.</div>
+                          </div>
+                          <label for="sellerName">Phone <span class="text-danger">*</span></label>
+                          <input type="number" class="form-control" id="sellerName" name="sellerName"
+                            placeholder="XXX XXX XXXX" required>
+                          <div class="invalid-feedback">Please enter the Phone.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-4" style="display: none;">
+                  <h5>Title Company Details</h5>
+                  <!-- Add form inputs for Other Agent -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-4">
+                          <label for="companyDetails"> Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="Title Company Name" required>
+                          <div class="invalid-feedback">Please enter the company details.</div>
+
+                          <label for="companyDetails">Street Name </label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+
+                          <label for="companyDetails">City </label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+                        </div>
+                        <div class="col-4">
+                          <label for="companyDetails">Zipcode </label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+                          <div class="invalid-feedback">Please enter the your Zipcode.</div>
+
+                          <label for="companyDetails">Escrow / Closer </label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+                          <div class="invalid-feedback">Please enter the your Escrow / Closer.</div>
+
+                          <label for="companyDetails">Phone </label>
+                          <input type="number" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+                          <div class="invalid-feedback">Please enter the your number.</div>
+                        </div>
+
+                        <div class="col-4">
+                          <label for="companyDetails">Fax </label>
+                          <input type="text" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="XXX XXX XXXX">
+                          <div class="invalid-feedback">Please enter the your Fax.</div>
+
+                          <label for="companyDetails">Email </label>
+                          <input type="email" class="form-control" id="companyDetails" name="companyDetails"
+                            placeholder="">
+                          <div class="invalid-feedback">Please enter the your email.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="step-5" style="display: none;">
+                  <h5>Mortgage Company Details</h5>
+                  <!-- Add form inputs for Other Agent -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-4">
+                          <label for="mortgageCompanyDetails"> Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="Title Company Name" required>
+                          <div class="invalid-feedback">Please enter the company details.</div>
+
+                          <label for="mortgageCompanyDetails">Street Name </label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="">
+
+                          <label for="mortgageCompanyDetails">City </label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="">
+                        </div>
+                        <div class="col-4">
+                          <label for="mortgageCompanyDetails">Zipcode </label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="">
+
+                          <label for="mortgageCompanyDetails">Loan Officer </label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="">
+
+
+                        </div>
+
+                        <div class="col-4">
+
+                          <label for="mortgageCompanyDetails">Phone </label>
+                          <input type="number" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="">
+
+                          <label for="mortgageCompanyDetails">Fax </label>
+                          <input type="text" class="form-control" id="mortgageCompanyDetails"
+                            name="mortgageCompanyDetails" placeholder="XXX XXX XXXX">
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="step-6">
+                  <h5>Other Agent</h5>
+                  <!-- Add form inputs for Other Agent -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="otherAgentName"> Name <span class="text-danger">*</span></label>
+                          <input type="text" class="form-control" id="otherAgentName" name="otherAgentName"
+                            placeholder="Bablu Sarkar" required>
+                          <div class="invalid-feedback">Please enter the other agent name.</div>
+
+                          <label for="otherAgentContact">Phone </label>
+                          <input type="number" class="form-control" id="otherAgentContact" name="otherAgentContact"
+                            placeholder="XXX XXX XXXX">
+                        </div>
+                        <div class="col-6">
+                          <label for="otherAgentName"> Fax </label>
+                          <input type="text" class="form-control" id="otherAgentName" name="otherAgentName"
+                            placeholder="XXX XXX XXXX">
+
+                          <label for="otherAgentContact">Email <span class="text-danger">*</span></label>
+                          <input type="email" class="form-control" id="otherAgentContact" name="otherAgentContact"
+                            placeholder="" required>
+                          <div class="invalid-feedback">Please enter the email.</div>
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="step-7" style="display: none;">
+                  <h5>Broker Details</h5>
+                  <!-- Add form inputs for Broker Details -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="brokerName">Name</label>
+                          <input type="text" class="form-control" id="brokerName" name="brokerName"
+                            placeholder=" Broker Name here">
+
+                          <label for="brokerContact">phone</label>
+                          <input type="number" class="form-control" id="brokerContact" name="brokerContact"
+                            placeholder="XXX XXX XXXX">
+
+                          <label for="brokerContact">Fax</label>
+                          <input type="text" class="form-control" id="brokerFax" name="brokerContact" placeholder="">
+
+                        </div>
+                        <div class="col-4">
+                          <label for="brokerName"> Street Name</label>
+                          <input type="text" class="form-control" id="brokerStreetName" name="brokerStreetName"
+                            placeholder=" ">
+
+                          <label for="brokerContact">City</label>
+                          <input type="text" class="form-control" id="brokerCity" name="brokenCity" placeholder="">
+
+                          <label for="brokerContact">Zipcode</label>
+                          <input type="number" class="form-control" id="brokerZipcode" name="brokerZipcode"
+                            placeholder="">
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+                <div class="step-8" style="display: none;">
+                  <h5>Referring Details</h5>
+                  <!-- Add form inputs for Referring Details -->
+                  <div class="form-group">
+                    <div class="container">
+                      <div class="row">
+                        <div class="col-6">
+                          <label for="referringName">Name</label>
+                          <input type="text" class="form-control" id="referringName" name="referringName"
+                            placeholder="Enter Broker Name here">
+
+                          <label for="referringContact">Phone</label>
+                          <input type="number" class="form-control" id="referringContact" name="referringContact"
+                            placeholder="XXX XXX XXXX">
+                        </div>
+                        <div class="col-6">
+                          <label for="referringContact">Fax</label>
+                          <input type="number" class="form-control" id="referringFax" name="referringFax"
+                            placeholder="XXX XXX XXXX">
+
+                          <label for="referringContact">Email</label>
+                          <input type="email" class="form-control" id="referringemail" name="referringemail"
+                            placeholder="">
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+                <div class="step-9">
+                  <h5>Final Calculations</h5>
+                  <!-- Add form inputs for Other Agent -->
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="salePrice">Sale Price<sup class="text-danger">*</sup></label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="salePrice" required>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-8">
+                      <label for="agentCommission">Agent Commission<sup class="text-danger">*</sup></label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">%</span>
+                        </div>
+                        <input type="number" class="form-control" id="agentCommission" required>
+                        <div class="input-group-append">
+                          <span class="input-group-text">=</span>
+                        </div>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control" id="agentCommissionValue" readonly>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">+</span>
+                        </div>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">Bonus</span>
+                        </div>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="plusBonus">
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="rebateValue">Rebate to Buyer / Seller</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="rebateValue">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="referralFee">Referral Fee</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="referralFee">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="rushFee">RUSH FEE - If not received w/in 3 business days of closing</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="rushFee" disabled>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="monthlyOfficeFee">Monthly Office Fee</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="monthlyOfficeFee" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="other">Other</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="other">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="netWithoutTransfee">Agent Commission Without Transaction Fee</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="netWithoutTransfee" readonly>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-4">
+                      <label for="otherCommission">Other Agent Commission</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">%</span>
+                        </div>
+                        <input type="number" class="form-control" id="otherCommission">
+                        <div class="input-group-append">
+                          <span class="input-group-text">=</span>
+                        </div>
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="text" class="form-control" id="otherCommissionValue" readonly>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="transacationFee">%Transaction Fee or Each increment over $10,000.00 Transaction
+                        Fee</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="transacationFee" disabled>
+                      </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="yourNet">Your Net</label>
+                      <div class="input-group">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">$</span>
+                        </div>
+                        <input type="number" class="form-control" id="yourNet" disabled>
+                      </div>
+                    </div>
+                  </div>
+
+
+                </div>
+              </div>
+
+              <!-- Navigation buttons -->
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" id="prevBtn" style="display: none;">Back</button>
+                <button type="button" class="btn btn-primary" id="nextBtn">Next</button>
+                <button type="submit" class="btn btn-success" id="submitBtn" style="display: none;">Submit</button>
+              </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"></script>
+  <script src="script.js"></script>
+
+</body>
+
+</html>
